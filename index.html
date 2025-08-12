@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan's Portfolio</title>
+    <style>
+        /* ===== Global Styles ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa 0%, #f4f4f4 100%);
+            color: #333;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background: linear-gradient(270deg, #0d8abc, #1976d2, #0d8abc);
+            background-size: 600% 600%;
+            animation: gradientShift 8s ease infinite;
+            color: #fff;
+            padding: 40px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .avatar {
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            width: 128px;
+            height: 128px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .tagline {
+            font-size: 1.2em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #e0f7fa;
+        }
+
+        /* ===== Navigation Styles ===== */
+        nav {
+            background: #1976d2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 18px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 0;
+            display: block;
+            font-weight: 500;
+            transition: color 0.2s, transform 0.2s;
+        }
+        nav ul li a:hover {
+            color: #e0f7fa;
+            transform: translateY(-2px);
+        }
+
+        /* ===== Section Styles ===== */
+        section {
+            max-width: 700px;
+            margin: 32px auto;
+            background: #fff;
+            padding: 28px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(13,138,188,0.07);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        section h2 span {
+            margin-left: 8px;
+            font-size: 1.1em;
+        }
+        section ul {
+            padding-left: 18px;
+        }
+        section a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        section a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Images in Sections ===== */
+        .section-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .project-images {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .project-images img {
+            width: 100%;
+            max-width: 160px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .contact-card {
+            background: #f9f9f9;
+            padding: 14px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .contact-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* ===== Footer Styles ===== */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #0d8abc;
+            color: #fff;
+            font-size: 1em;
+            letter-spacing: 1px;
+            margin-top: 32px;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+            section {
+                margin: 16px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="hero">
+            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=128&q=80" alt="Dan Profile Photo" class="avatar">
+            <h1>Dan</h1>
+            <p class="tagline">Creative Web Developer</p>
+        </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about">
+        <h2>About Me <span>🌀</span></h2>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Web developer at work" class="section-image">
+        <p>Hello! I'm <strong>Dan</strong>, a passionate web developer who loves building creative and modern websites. I enjoy working with HTML, CSS, and JavaScript to turn ideas into reality. My interests include UI/UX design, animation, and learning new tech trends.</p>
+        <ul>
+            <li>Location: Your City, Country</li>
+            <li>Experience: 3+ years in web development</li>
+            <li>Skills: HTML, CSS, JavaScript, UI/UX</li>
+        </ul>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/dan-jose-4997b5315/" target="_blank">LinkedIn</a> or <a href="https://github.com/dan-jose2006" target="_blank">GitHub</a>.</p>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects">
+        <h2>Projects <span>💡</span></h2>
+        <div class="project-images">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80" alt="Portfolio Screenshot">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80" alt="Creative Landing Page">
+        </div>
+        <ul>
+            <li><strong>Portfolio Website</strong> - A personal site to showcase my work and skills.</li>
+            <li><strong>Animated Landing Page</strong> - A creative homepage with smooth animations.</li>
+        </ul>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact">
+        <h2>Contact Info <span>📧</span></h2>
+        <div class="contact-info">
+            <div class="contact-card">📧 Email: <a href="mailto:dan@example.com">dan@example.com</a></div>
+            <div class="contact-card">📱 Phone: +123-456-7890</div>
+            <div class="contact-card">💼 <a href="https://www.linkedin.com/in/dan-jose-4997b5315/" target="_blank">LinkedIn</a></div>
+            <div class="contact-card">💻 <a href="https://github.com/dan-jose2006" target="_blank">GitHub</a></div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Contact" class="section-image">
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Dan</p>
+    </footer>
+
+</body>
+</html>
